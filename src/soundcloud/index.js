@@ -57,7 +57,11 @@ module.exports = function soundCloudSource(uw, opts = {}) {
     const hydrations = JSON.parse(match[1]);
     const sounds = hydrations.filter(el => el.hydratable === 'sound');
     const media = sounds.map(s => normalizeMedia(s.data));
-    uw.redis.hset(CACHE_KEY, `${media.id}`, JSON.stringify(media));
+
+    const cache = {};
+    media.forEach(m => { cache[m.sourceID] = JSON.stringify(m); })
+    console.log('hmset', CACHE_KEY, cache);
+    uw.redis.hmset(CACHE_KEY, cache);
 
     return media;
   }
@@ -69,7 +73,7 @@ module.exports = function soundCloudSource(uw, opts = {}) {
       if (/^https?:/.test(item)) {
         urls.push(item);
       } else {
-        sourceIDs.push(item);
+        sourceIDs.push(`${item}`);
       }
     });
     return { urls, sourceIDs };
@@ -91,8 +95,8 @@ module.exports = function soundCloudSource(uw, opts = {}) {
       const item = urlItems[index];
       items[url] = item;
     });
-    sourceIDItems.forEach((sound) => {
-      const item = normalizeMedia(sound);
+    sourceIDItems.flatMap(x => x).forEach((sound) => {
+      const item = JSON.parse(sound);
       items[item.sourceID] = item;
     });
     return sourceIDsAndURLs.map(input => items[input]);
