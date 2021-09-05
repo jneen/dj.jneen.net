@@ -78,10 +78,6 @@ module.exports = function soundCloudSource(uw, opts = {}) {
   async function get(sourceIDsAndURLs) {
     const { urls, sourceIDs } = sortSourceIDsAndURLs(sourceIDsAndURLs);
 
-    // [jneen] i really hope ids don't come through here, if they do we have to
-    // fix it at the source
-    if (sourceIDs.length > 0) throw new Error("oh no")
-
     // Use the `/resolve` endpoint when items are added by their URL.
     const urlsPromise = Promise.all(urls.flatMap(resolve));
     const sourceIDsPromise = uw.redis.hmget(CACHE_KEY, sourceIDs);
