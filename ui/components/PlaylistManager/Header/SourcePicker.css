@@ -1,0 +1,30 @@
+@import "./SourcePickerElement.css";
+
+:root {
+  --source-picker-width: calc(48px + 24px);
+}
+
+.SourcePicker {
+  width: var(--source-picker-width);
+}
+
+.SourcePicker-active {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.SourcePicker-arrow {
+  height: 100%;
+}
+
+.SourcePicker-list {
+  width: var(--source-picker-width);
+}
+
+.SourcePicker-item {
+  cursor: pointer;
+  width: 100%;
+  padding: 5px;
+}

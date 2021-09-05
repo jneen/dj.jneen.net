@@ -1,0 +1,34 @@
+@import "../../../vars.css";
+@import "./EmojiSuggestion.css";
+@import "./Suggestion.css";
+
+.ChatInputWrapper {
+  background: var(--chat-background-color);
+}
+
+.ChatInput {
+  height: 100%;
+  width: 100%;
+}
+
+.ChatInput-suggestions {
+  position: absolute;
+  bottom: 100%;
+  width: 100%;
+}
+
+.ChatInput-input {
+  margin: 15px 15px 16px 15px;
+  height: 28px;
+  width: calc(100% - 32px);
+  padding: 0 6px;
+  border: 1px solid var(--chat-border-color);
+  background: #222222;
+  color: var(--text-color);
+  font-size: 10pt;
+
+  &.is-focused {
+    border-color: var(--highlight-color);
+    outline: none;
+  }
+}

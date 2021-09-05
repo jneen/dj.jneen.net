@@ -1,0 +1,63 @@
+@import "../../vars.css";
+
+:root {
+  --sc-margins: 20px;
+}
+
+.src-soundcloud-Player {
+  width: 400px;
+  max-width: 100%;
+  margin: auto;
+  height: 300px;
+}
+
+.src-soundcloud-Player-message {
+  position: relative;
+  z-index: 3;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.src-soundcloud-Player-error {
+  position: relative;
+  z-index: 3;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.src-soundcloud-Player-errorIcon {
+  margin-right: 16px;
+}
+
+.src-soundcloud-Player-meta {
+  background: var(--soundcloud-meta-background);
+  position: relative;
+  padding: var(--sc-margins);
+  z-index: 3;
+}
+
+.src-soundcloud-Player-info {
+  display: flex;
+  margin-bottom: var(--sc-margins);
+}
+
+.src-soundcloud-Player-art {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin-right: var(--sc-margins);
+}
+
+.src-soundcloud-Player-links {
+  width: calc(100% - 100px - var(--sc-margins));
+}
+
+.src-soundcloud-Player-permalink {
+  display: block;
+  font: 14pt;
+  color: var(--text-color);
+  text-align: right;
+  text-decoration: none;
+}

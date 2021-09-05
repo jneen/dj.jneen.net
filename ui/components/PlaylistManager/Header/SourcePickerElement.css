@@ -1,0 +1,12 @@
+.SourcePickerElement {
+  width: 100%;
+  height: 36px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.SourcePickerElement--active {
+  width: 48px;
+  float: left;
+}

@@ -1,0 +1,33 @@
+@import "../../vars.css";
+
+.SidePanel-indicator {
+  background-color: #fff;
+}
+
+.SidePanel-tab {
+  height: var(--header-height);
+  min-width: 0;
+}
+
+.SidePanel-tabLabel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.SidePanel-panel {
+  position: absolute;
+  top: var(--header-height);
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  visibility: hidden;
+  opacity: 0;
+
+  &.is-selected {
+    visibility: visible;
+    opacity: 1;
+  }
+}

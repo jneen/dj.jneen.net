@@ -1,0 +1,8 @@
+@import "../../../vars.css";
+@import "./Row.css";
+
+.PlaylistMenu {
+  background: var(--overlay-background);
+  height: 100%;
+  overflow-y: auto;
+}

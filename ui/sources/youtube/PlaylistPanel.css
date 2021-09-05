@@ -1,0 +1,14 @@
+.src-youtube-PlaylistPanel-header {
+  display: flex;
+}
+
+.src-youtube-PlaylistPanel-name {
+  flex-grow: 1;
+}
+
+.src-youtube-PlaylistPanel-importIcon {
+  color: #555;
+  &:hover {
+    color: #fff;
+  }
+}

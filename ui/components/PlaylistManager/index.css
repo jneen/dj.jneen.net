@@ -1,0 +1,33 @@
+@import "./Header/index.css";
+@import "./Import/index.css";
+@import "./Menu/index.css";
+@import "./Panel/index.css";
+@import "./SearchResults/index.css";
+
+.PlaylistManager {
+  z-index: 10;
+  position: relative;
+  height: 100%;
+}
+
+.PlaylistManager-menu {
+  width: 33%; /* 25% of total screen width */
+  float: left;
+
+  /* menu would be larger than 300px */
+  @media (min-width: 1200px) {
+    width: 300px;
+  }
+}
+
+.PlaylistManager-panel {
+  position: absolute;
+  left: 33%;
+  right: 0;
+  height: 100%;
+
+  /* menu would be larger than 300px */
+  @media (min-width: 1200px) {
+    left: 300px;
+  }
+}

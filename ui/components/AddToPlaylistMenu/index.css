@@ -1,0 +1,12 @@
+.AddToPlaylistMenu-playlist {
+  display: flex;
+  justify-content: space-between;
+}
+
+.AddToPlaylistMenu-playlistName {
+  width: 100%;
+}
+
+.AddToPlaylistMenu-smallIcon {
+  flex-grow: 0;
+}

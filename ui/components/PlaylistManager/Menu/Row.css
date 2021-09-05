@@ -1,0 +1,78 @@
+@import "../../../vars.css";
+
+.PlaylistMenuRow {
+  height: 44px;
+  line-height: 44px;
+  padding: 0 10px;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  &.is-selected {
+    background: var(--media-list-alternate-color);
+  }
+  &.is-droppable {
+    background: var(--media-list-alternate-color);
+  }
+}
+
+.PlaylistMenuRow-ripple {
+  color: var(--media-list-alternate-color);
+}
+
+.PlaylistMenuRow-active-icon {
+  display: block;
+  float: left;
+  height: 44px;
+  margin-right: 7px;
+  padding-top: 5px;
+}
+
+.PlaylistMenuRow-loading {
+  width: 24px;
+  height: 24px;
+  float: left;
+  margin: 10px 7px 10px 0;
+}
+
+.PlaylistMenuRow-title {
+  align-self: flex-start;
+  /* dot dot dot */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.PlaylistMenuRow-count {
+  align-self: flex-end;
+  color: var(--highlight-color);
+  margin-right: 5px;
+  margin-left: 7px;
+}
+
+.PlaylistMenuRow-closeButton {
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  margin-right: -10px;
+}
+
+.PlaylistMenuRow--create {
+  background-color: var(--highlight-color);
+  &:hover {
+    background-color: var(--highbright-color);
+  }
+}
+
+.PlaylistMenuRow--search {
+  cursor: default;
+}
+.PlaylistMenuRow--search .PlaylistMenuRow-count {
+  margin-right: 0;
+}
+.PlaylistMenuRow--search .PlaylistMenuRow-title {
+  flex-grow: 2;
+  cursor: pointer;
+}

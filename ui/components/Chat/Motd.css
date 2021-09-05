@@ -1,0 +1,7 @@
+.ChatMessage--motd {
+  & .ChatMessage-content {
+    padding-left: 10px;
+    white-space: pre-wrap;
+    color: #eee;
+  }
+}

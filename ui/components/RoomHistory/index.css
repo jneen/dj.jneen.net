@@ -1,0 +1,17 @@
+@import "../../vars.css";
+@import "./Row.css";
+@import "./Votes.css";
+
+.RoomHistory {
+  z-index: 10;
+  position: relative;
+  height: 100%;
+}
+
+.RoomHistory-body {
+  background: var(--overlay-background);
+}
+
+.RoomHistory-list {
+  max-height: 100%;
+}

@@ -1,0 +1,31 @@
+@import "../../../vars.css";
+
+:root {
+  --playlist-filter-input-height: 36px;
+}
+
+.PlaylistMediaFilter {
+  display: flex;
+}
+
+.PlaylistMediaFilter-input {
+  width: 180px;
+  border-radius: 2px;
+  background: #252727;
+  border: 1px solid #252727;
+  color: var(--text-color);
+  font-size: 12pt;
+  padding: 0 8px;
+  height: var(--playlist-filter-input-height);
+  display: none;
+  margin-top: calc((54px - var(--playlist-filter-input-height)) / 2);
+
+  &:focus {
+    outline: none;
+    border: 1px solid var(--highlight-color);
+  }
+
+  &.is-open {
+    display: block;
+  }
+}

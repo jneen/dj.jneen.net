@@ -1,0 +1,11 @@
+.VolumeSlider {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.VolumeSlider-slider {
+  display: inline-block;
+  width: 160px;
+  margin-left: 6px;
+}

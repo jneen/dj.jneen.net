@@ -1,0 +1,24 @@
+@import "../../../vars.css";
+@import "./Meta.css";
+@import "./PlaylistEmpty.css";
+@import "./PlaylistFilter.css";
+@import "./PlaylistItemRow.css";
+
+.PlaylistPanel {
+  background: var(--overlay-background);
+  height: 100%;
+  width: 100%;
+}
+
+.PlaylistPanel-loading {
+  margin: auto;
+  width: 25%;
+}
+
+.PlaylistPanel-media {
+  height: calc(100% - 54px);
+}
+
+.PlaylistPanel--empty {
+  padding: 16px;
+}

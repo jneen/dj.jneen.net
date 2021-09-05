@@ -1,0 +1,22 @@
+@import "../../vars.css";
+
+.SkipButton {
+  color: var(--text-color);
+}
+
+.SkipButton.is-loading {
+  width: 24px;
+  height: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SkipButton-loader {
+  /* IconButton size */
+  /* TODO take this from the material-ui theme instead */
+  width: 48px;
+  height: 48px;
+}

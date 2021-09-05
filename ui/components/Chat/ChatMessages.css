@@ -1,0 +1,36 @@
+@import "../../vars.css";
+
+.ChatMessages {
+  height: 100%;
+  overflow-y: scroll;
+  font-size: 10pt;
+  /* Fix for tooltips close to the edge. The tooltips themselves work fine,
+   * but the element that's used to position the tooltips correctly can overflow
+   * by a few pixels.
+   * TODO fix that^ in src/components/Tooltip. Should resize(?) the positioning
+   * wrapper if it's close to the edge of the screen. */
+  overflow-x: hidden;
+  background: var(--background-color);
+}
+
+.ChatMessages-scrollDown {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  height: 55px;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.ChatMessages-scrollDownButton {
+  pointer-events: all;
+  transition: margin-top 140ms ease-in;
+  margin: auto;
+  margin-top: 55px;
+  @nest .ChatMessages-scrollDown.is-visible & {
+    transition: margin-top 140ms ease-out;
+    margin-top: 0;
+  }
+}

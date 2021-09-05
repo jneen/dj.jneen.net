@@ -1,0 +1,31 @@
+@import "../../../vars.css";
+
+.AdminApp {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--background-color);
+}
+
+.AdminApp-menu {
+  position: absolute;
+  width: 250px;
+  top: 0;
+  bottom: 0;
+}
+
+.AdminApp-menuItem {
+  &.is-selected {
+    background-color: var(--highlight-color);
+  }
+}
+
+.AdminApp-page {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 250px;
+  padding: 20px;
+  overflow-y: scroll;
+}

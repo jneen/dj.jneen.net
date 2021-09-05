@@ -1,0 +1,21 @@
+@import "./vars.css";
+/* Include some of the app base styles.  */
+@import "./components/App/index.css";
+
+body {
+  font-family: Open Sans, sans-serif;
+
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+#app {
+  width: 1024px;
+  margin: auto;
+}
+
+.Privacy-logo {
+  height: 1.25em;
+  margin-right: 0.5em;
+  vertical-align: sub;
+}

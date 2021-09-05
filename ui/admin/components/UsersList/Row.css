@@ -1,0 +1,19 @@
+@import "../../../vars.css";
+
+.AdminUserRow {
+  background-color: var(--background-color);
+  &:nth-child(2n) {
+    background-color: #242424;
+  }
+}
+
+.AdminUserRow-cell {
+  border-bottom: 0px none;
+  font-size: 12pt;
+  padding-right: 16px;
+}
+
+.AdminUserRow-avatar {
+  width: 48px;
+  padding-right: 0;
+}

@@ -1,0 +1,13 @@
+.MediaLoadingIndicator {
+  height: 100%;
+  width: 55px;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.MediaLoadingIndicator-spinner {
+  width: 32px;
+  height: 32px;
+}

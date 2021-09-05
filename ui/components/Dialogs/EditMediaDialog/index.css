@@ -1,0 +1,34 @@
+@import "../../../vars.css";
+
+.EditMediaDialog {
+  width: 75%;
+  max-width: 768px;
+}
+
+.EditMediaDialogForm {
+  display: flex;
+  justify-content: space-between;
+}
+
+.EditMediaDialogForm-column {
+  width: 50%;
+}
+
+.EditMediaDialogForm-separator {
+  /* Pushes columns to the side! */
+}
+
+.EditMediaDialogGroup {
+  display: flex;
+  justify-content: center;
+}
+
+.EditMediaDialogGroup-field {
+  flex-grow: 1;
+}
+
+.EditMediaDialogGroup-label {
+  line-height: 50px;
+  white-space: nowrap;
+  padding: 0 20px;
+}

@@ -1,0 +1,15 @@
+@import "./UserRow.css";
+
+.UserList {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.UserList-row {
+  background: var(--user-list-color);
+}
+
+.UserList-row--alternate {
+  background: var(--user-list-alternate-color);
+}

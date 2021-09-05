@@ -1,0 +1,72 @@
+@import "../../vars.css";
+
+.MediaListRow {
+  height: 56px;
+  line-height: 56px;
+  position: relative;
+  background: var(--media-list-color);
+  border-bottom: 1px solid var(--divider-color);
+
+  &.is-loading {
+    opacity: 0.75;
+  }
+
+  &.is-selected {
+    background: var(--selected-media-row-color);
+  }
+}
+
+.MediaListRow-loader {
+  margin: 0 15px;
+}
+
+.MediaListRow-thumb {
+  height: 100%;
+  width: 55px;
+  margin: 0 15px;
+  padding: 7px 0;
+  float: left;
+}
+
+.MediaListRow-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.MediaListRow-artist {
+  height: 100%;
+  float: left;
+  width: calc(50% - var(--media-list-spacing) - var(--media-list-thumb-width) - var(--media-list-duration-width));
+  margin-right: var(--media-list-spacing);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.MediaListRow-title {
+  height: 100%;
+  float: left;
+  width: calc(50% - var(--media-list-spacing));
+  margin-right: var(--media-list-spacing);
+  overflow: hidden;
+  color: var(--secondary-text-color);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.MediaListRow-duration {
+  height: 100%;
+  float: left;
+  width: var(--media-list-duration-width);
+}
+
+.MediaListRow-actions {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  display: none;
+}
+
+.MediaListRow:hover .MediaListRow-actions {
+  display: block;
+}

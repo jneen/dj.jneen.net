@@ -1,0 +1,73 @@
+@import "../../vars.css";
+@import "./NextMedia.css";
+@import "./SettingsButton.css";
+@import "./SkipButton.css";
+@import "./SkipReasonsList.css";
+@import "./UserInfo.css";
+@import "./Responses/index.css";
+@import "./WaitlistButton.css";
+
+.FooterBar {
+  display: flex;
+  justify-content: space-between;
+  z-index: 20; /* on top of overlays */
+  background: var(--background-color);
+}
+
+.FooterBar-guest {
+  font-size: 12pt;
+  padding: 0 25px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.FooterBar-user {
+  height: 100%;
+  width: 75px;
+  flex-shrink: 0;
+}
+
+.FooterBar-next {
+  flex-grow: 1;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--background-hover-color);
+  }
+}
+
+.FooterBar-responses {
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.FooterBar-responses--spaced {
+  padding-right: 1rem;
+}
+
+.FooterBar-skip {
+  height: 100%;
+  padding-right: 0.5rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.FooterAuthButton {
+  width: 125px;
+  height: 100%;
+  color: var(--text-color);
+  font-size: 12pt;
+}
+
+.FooterAuthButton--register {
+  background: var(--background-color);
+  &:hover {
+    background: var(--background-hover-color);
+  }
+}

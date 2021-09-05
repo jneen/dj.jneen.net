@@ -1,0 +1,57 @@
+@import "../../vars.css";
+@import "./AppTitle.css";
+@import "./HistoryButton.css";
+@import "./Progress.css";
+@import "./Volume.css";
+
+.HeaderBar {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  z-index: 4; /* below overlays, above video */
+}
+
+.HeaderBar-title {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.HeaderBar-volume {
+  top: 0;
+  flex-shrink: 0;
+  padding-right: 12px;
+}
+
+.HeaderBar-history {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 6px;
+}
+
+.HeaderBar-nowPlaying {
+  flex-grow: 1;
+  flex-shrink: 1;
+  overflow: hidden;
+}
+
+.HeaderBar-media {
+  margin-top: 5px;
+  line-height: 25px;
+}
+
+.HeaderBar-dj {
+  font-size: 80%;
+  color: var(--muted-text-color);
+}
+
+.HeaderBar-progress {
+  position: absolute;
+  bottom: 1px;
+  height: 2px;
+  width: 100%;
+  /* show above the history button background fill colour,
+   * but below the history icon and tooltip */
+  z-index: 6;
+}

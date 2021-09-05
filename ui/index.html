@@ -1,0 +1,33 @@
+<%
+  const loading = htmlWebpackPlugin.options.loadingScreen &&
+    await htmlWebpackPlugin.options.loadingScreen();
+%>
+<!DOCTYPE html>
+<!-- lang will be overwritten with user configuration at runtime. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= htmlWebpackPlugin.options.title || 'üWave' %></title>
+    <% if (htmlWebpackPlugin.files.favicon) { %>
+      <link rel="shortcut icon" href="<%= htmlWebpackPlugin.files.favicon %>">
+    <% } %>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,600italic,400italic">
+    <style id="jss"><%= loading ? loading.css : '' %></style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- React App goes here. -->
+    </div>
+    <div id="app-loading">
+      <% if (loading) { %>
+        <%- loading.html %>
+      <% } else { %>
+        <!-- Loading screen -->
+      <% } %>
+    </div>
+    <script id="u-wave-config" type="application/json">{}</script>
+  </body>
+</html>

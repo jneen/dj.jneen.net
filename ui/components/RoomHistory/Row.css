@@ -1,0 +1,57 @@
+@import "../../vars.css";
+
+:root {
+  --history-list-thumb-width: 85px;
+  --history-list-user-width: 130px;
+  --history-list-time-width: 170px;
+  --history-list-votes-width: 250px;
+
+  --history-list-not-song-width: (
+    var(--history-list-thumb-width) +
+    var(--history-list-time-width) +
+    var(--history-list-user-width) +
+    var(--history-list-votes-width)
+  );
+}
+
+.HistoryRow {
+  height: 54px;
+  line-height: 54px;
+  position: relative;
+}
+
+.HistoryRow-song {
+  font-size: 1em;
+  height: 100%;
+  float: left;
+  width: calc(100% - var(--media-list-spacing) - var(--history-list-not-song-width));
+  margin-right: var(--media-list-spacing);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.HistoryRow-votes {
+  height: 100%;
+  float: left;
+  width: var(--history-list-votes-width);
+}
+
+.HistoryRow-user {
+  height: 100%;
+  float: left;
+  width: var(--history-list-user-width);
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.HistoryRow-time {
+  height: 100%;
+  float: left;
+  text-align: right;
+  padding-right: 20px;
+  color: var(--muted-text-color);
+  width: var(--history-list-time-width);
+}

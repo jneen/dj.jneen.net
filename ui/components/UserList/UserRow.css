@@ -1,0 +1,16 @@
+.UserRow {
+  height: 40px;
+  width: 100%;
+  line-height: 30px;
+  padding: 5px 0;
+  text-decoration: none;
+}
+
+.UserRow--cardable {
+  cursor: pointer;
+}
+
+.UserRow-avatar {
+  float: left;
+  margin: 3px 10px;
+}
