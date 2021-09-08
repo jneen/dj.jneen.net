@@ -11,7 +11,10 @@ module.exports = class YouTubeClient {
   }
 
   async get(resource, options) {
+    console.log("YOUTUBE GET", resource, options);
     const query = qsStringify({ ...this.params, ...options });
+    console.log("FETCH", `${this.baseUrl}/${resource}?${query}`);
+
     const response = await fetch(`${this.baseUrl}/${resource}?${query}`);
     const data = await response.json();
     if (!response.ok) {

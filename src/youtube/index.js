@@ -42,18 +42,14 @@ module.exports = function youTubeSource(uw, opts = {}) {
     const id = getYouTubeID(query, { fuzzy: false });
     console.log("ID: ", id);
 
-    try {
-      const data = await client.search({
-        ...defaultSearchOptions,
-        ...searchOptions,
-        q: id ? `"${id}"` : query,
-        pageToken: page,
-      });
-    }
-    catch(e) {
-      console.log("ERROR: ", e);
-      throw e;
-    }
+    if (id) return get([id]);
+
+    const data = await client.search({
+      ...defaultSearchOptions,
+      ...searchOptions,
+      q: id ? `"${id}"` : query,
+      pageToken: page,
+    });
 
     const isVideo = item => item.id && item.id.videoId;
     const isBroadcast = item => item.snippet && item.snippet.liveBroadcastContent !== 'none';
