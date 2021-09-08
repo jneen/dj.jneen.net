@@ -1,10 +1,10 @@
-import fetch from 'node-fetch';
-import qsStringify from 'qs-stringify';
+const fetch = require('node-fetch');
+const qsStringify = require('qs-stringify');
 
 /**
  * A small YouTube Data API client.
  */
-export default class YouTubeClient {
+module.exports = class YouTubeClient {
   constructor(params) {
     this.params = params;
     this.baseUrl = 'https://www.googleapis.com/youtube/v3';

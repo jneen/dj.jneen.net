@@ -81,10 +81,13 @@ class SoundCloudPlayer extends React.Component {
   }
 
   handleError = (error) => {
-    this.setState({
-      error,
-      needsTap: error.name === 'NotAllowedError',
-    });
+    this.audio.pause();
+    this.componentDidMount();
+
+    // this.setState({
+    //   error,
+    //   needsTap: error.name === 'NotAllowedError',
+    // });
   };
 
   handlePlay = () => {

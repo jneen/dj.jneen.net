@@ -1,4 +1,4 @@
-import { getPlaylistID, getVideos, getBestThumbnail } from './util';
+const { getPlaylistID, getVideos, getBestThumbnail } = require('./util');
 
 const rxChannelUrl = /youtube\.com\/channel\/([^/?#]+)/i;
 const rxUserUrl = /youtube\.com\/user\/([^/?#]+)/i;
@@ -20,7 +20,7 @@ const getPlaylistsOptions = {
   maxResults: 50,
 };
 
-export default class YouTubeImport {
+module.exports = class YouTubeImport {
   constructor(client) {
     this.client = client;
   }

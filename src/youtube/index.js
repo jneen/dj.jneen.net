@@ -1,7 +1,7 @@
-import getYouTubeID from 'get-youtube-id';
-import { getVideos } from './util';
-import YouTubeClient from './Client';
-import Importer from './Importer';
+const getYouTubeID = require('get-youtube-id');
+const { getVideos } = require('./util');
+const YouTubeClient = require('./Client');
+const Importer = require('./Importer');
 
 const defaultSearchOptions = {
   part: 'id,snippet',
@@ -17,7 +17,7 @@ const defaultSearchOptions = {
   videoSyndicated: true,
 };
 
-export default function youTubeSource(uw, opts = {}) {
+module.exports = function youTubeSource(uw, opts = {}) {
   if (!opts.key) {
     throw new TypeError('Expected a YouTube API key in "options.key". For information on how to ' +
       'configure your YouTube API access, see ' +
@@ -38,13 +38,22 @@ export default function youTubeSource(uw, opts = {}) {
     // When searching for a video URL, we want to search for the video ID
     // only, because search results are very inconsistent with some types of
     // URLs.
+    console.log("SEARCH", query);
     const id = getYouTubeID(query, { fuzzy: false });
-    const data = await client.search({
-      ...defaultSearchOptions,
-      ...searchOptions,
-      q: id ? `"${id}"` : query,
-      pageToken: page,
-    });
+    console.log("ID: ", id);
+
+    try {
+      const data = await client.search({
+        ...defaultSearchOptions,
+        ...searchOptions,
+        q: id ? `"${id}"` : query,
+        pageToken: page,
+      });
+    }
+    catch(e) {
+      console.log("ERROR: ", e);
+      throw e;
+    }
 
     const isVideo = item => item.id && item.id.videoId;
     const isBroadcast = item => item.snippet && item.snippet.liveBroadcastContent !== 'none';

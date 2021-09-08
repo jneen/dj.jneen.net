@@ -1,7 +1,7 @@
-import parseIsoDuration from 'parse-iso-duration';
-import getArtistTitle from 'get-artist-title';
-import getYouTubeID from 'get-youtube-id';
-import chunk from 'chunk';
+const parseIsoDuration = require('parse-iso-duration');
+const getArtistTitle = require('get-artist-title');
+const getYouTubeID = require('get-youtube-id');
+const chunk = require('chunk');
 
 const rxSimplePlaylistUrl = /youtube\.com\/(?:playlist|watch)\?.*?list=([a-z0-9_-]+)/i;
 const rxPlaylistID = /^([a-z0-9_-]+)$/i;
@@ -9,7 +9,7 @@ const rxPlaylistID = /^([a-z0-9_-]+)$/i;
 /**
  * Extract a playlist ID from a playlist URL.
  */
-export function getPlaylistID(url) {
+const getPlaylistID = exports.getPlaylistID = function getPlaylistID(url) {
   if (rxPlaylistID.test(url)) {
     return url;
   }
@@ -29,7 +29,7 @@ function parseYouTubeDuration(duration) {
 /**
  * Get the highest quality available thumbnail for a video or playlist.
  */
-export function getBestThumbnail(thumbnails) {
+const getBestThumbnail = exports.getBestThumbnail = function getBestThumbnail(thumbnails) {
   if (thumbnails) {
     if (thumbnails.high) {
       return thumbnails.high.url;
@@ -52,7 +52,7 @@ function getBlockedCountryCodes(contentDetails) {
 /**
  * Convert a YouTube Video resource to a üWave media object.
  */
-export function normalizeMedia(video) {
+const normalizeMedia = exports.normalizeMedia = function normalizeMedia(video) {
   const [artist, title] = getArtistTitle(video.snippet.title, {
     defaultArtist: video.snippet.channelTitle,
   });
@@ -99,7 +99,7 @@ async function getVideosPage(client, sourceIDs) {
 /**
  * Fetch Video resources from the YouTube Data API.
  */
-export async function getVideos(client, sourceIDs) {
+const getVideos = exports.getVideos = async function getVideos(client, sourceIDs) {
   const ids = sourceIDs.map(id => getYouTubeID(id) || id);
 
   const pages = await Promise.all(chunk(ids, 50).map(page => getVideosPage(client, page)));
